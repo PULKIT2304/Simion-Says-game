@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #111827, #1f2937, #0f172a);
+
+    color: white;
+}
+
+h1 {
+
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+h2 {
+
+    margin-bottom: 30px;
+    color: #ddd;
+    font-weight: 400;
+}
+
+.score-box {
+
+    display: flex;
+    gap: 40px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.game {
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    place-items: center;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .4);
+}
+
+.btn {
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .3);
+}
+
+.btn:hover {
+
+    transform: scale(1.05);
+}
+
+.red {
+
+    background: #ff4d6d;
+}
+
+.green {
+
+    background: #2ecc71;
+}
+
+.blue {
+
+    background: #4d96ff;
+}
+
+.yellow {
+
+    background: #ffd93d;
+}
+
+.start {
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background: white;
+
+    color: #111;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    border: 8px solid #222;
+
+    transition: .25s;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+}
+
+.start:hover {
+
+    transform: scale(1.08);
+}
+
+.flash {
+
+    animation: flash .25s;
+}
+
+@keyframes flash {
+
+    50% {
+        background: white;
+    }
+}
+
+.userFlash {
+
+    animation: user .25s;
+}
+
+@keyframes user {
+
+    50% {
+        background: #ff9f1c;
+    }
+}
+
+.gameOver {
+
+    animation: shake .4s;
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media(max-width:600px) {
+
+    .game {
+
+        width: 340px;
+        height: 340px;
+    }
+
+    .btn {
+
+        width: 120px;
+        height: 120px;
+    }
+
+    .start {
+
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    h1 {
+
+        font-size: 2rem;
+    }
+}
